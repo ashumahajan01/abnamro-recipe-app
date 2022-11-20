@@ -47,6 +47,15 @@ public class Receipe {
 		this.receipeType = receipeType;
 		this.ingredients = ingredients;
 	}
+	public Receipe(String name, int noOfServers, String instructions, int receipeType,
+			Set<Ingredients> ingredients) {
+		super();
+		this.name = name;
+		this.noOfServers = noOfServers;
+		this.instructions = instructions;
+		this.receipeType = receipeType;
+		this.ingredients = ingredients;
+	}
 
 	public Long getId() {
 		return id;
@@ -99,5 +108,12 @@ public class Receipe {
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "receipe_ingredient", joinColumns = @JoinColumn(name = "receipe_id"), inverseJoinColumns = @JoinColumn(name = "ingredient_id"))
 	private Set<Ingredients> ingredients;
+
+	@Override
+	public String toString() {
+		return "Receipe [id=" + id + ", name=" + name + ", noOfServers=" + noOfServers + ", instructions="
+				+ instructions + ", receipeType=" + receipeType + ", ingredients=" + ingredients + "]";
+	}
+	
 
 }

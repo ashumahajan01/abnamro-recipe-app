@@ -50,4 +50,11 @@ public class Ingredients {
 	public void setIngredients(String ingredients) {
 		this.ingredients = ingredients;
 	}
+
+	@Override
+	public String toString() {
+		return "Ingredients [id=" + id + ", ingredients=" + ingredients + "]";
+	}
+	
+	
 }

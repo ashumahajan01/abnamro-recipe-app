@@ -69,9 +69,9 @@ public class ReceipeController {
 	 * @throws DataNotFoundException
 	 */
 	@GetMapping(value = "/search")
-	public ResponseEntity<Page<Receipe>> searchRecipe(@RequestBody ReceipeSearchCritria employeeSearchCriteria)
+	public ResponseEntity<Page<Receipe>> searchRecipe(@RequestBody ReceipeSearchCritria receipeSearchCriteria)
 			throws ApiServerException, DataNotFoundException {
-		return new ResponseEntity<>(receipeService.getReceipe(employeeSearchCriteria), HttpStatus.OK);
+		return new ResponseEntity<>(receipeService.getReceipe(receipeSearchCriteria), HttpStatus.OK);
 	}
 
 }
